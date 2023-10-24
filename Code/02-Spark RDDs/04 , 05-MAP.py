@@ -24,10 +24,7 @@ rdd2.collect()
 
 def foo(x):
   l = x.split()
-  l2 = []
-  for s in l:
-    l2.append(int(s) + 10)
-  return l2
+  return [int(s) + 10 for s in l]
 
 rdd3 = rdd.map(foo)
 rdd3.collect()

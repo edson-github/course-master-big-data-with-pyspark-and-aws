@@ -11,10 +11,7 @@ rdd.collect()
 # COMMAND ----------
 
 def foo(x):
-  if x == '12 12 33':
-    return False
-  else:
-    return True
+  return x != '12 12 33'
 
 rdd2 = rdd.filter(foo)
 rdd2.collect()
