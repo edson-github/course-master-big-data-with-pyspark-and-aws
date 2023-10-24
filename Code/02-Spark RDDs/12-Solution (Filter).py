@@ -14,10 +14,7 @@ flatMappedRdd = rdd.flatMap(lambda x: x.split(' '))
 # COMMAND ----------
 
 def filterAandC(x):
-  if x.startswith('a') or x.startswith('c'):
-    return False
-  else:
-    return True
+  return not x.startswith('a') and not x.startswith('c')
   
 filteredRdd = flatMappedRdd.filter(filterAandC)
 

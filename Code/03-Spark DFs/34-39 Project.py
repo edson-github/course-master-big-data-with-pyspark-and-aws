@@ -64,9 +64,7 @@ df.filter((df.state == "NY") & (df.department == "Finance") & (df.bonus > avgBon
 
 # 9
 def incr_salary(age, currentSalary):
-  if age > 45:
-    return currentSalary + 500
-  return currentSalary
+  return currentSalary + 500 if age > 45 else currentSalary
 
 incrSalaryUDF = udf(lambda x,y : incr_salary(x,y), IntegerType())
 

@@ -12,7 +12,7 @@ rdd.collect()
 
 x = 3
 y = 4
-x if x < y else y
+min(x, y)
 
 # COMMAND ----------
 
@@ -21,8 +21,8 @@ rdd2.collect()
 
 # COMMAND ----------
 
-rdd2.reduceByKey(lambda x , y : x if x < y else y).collect()
+rdd2.reduceByKey(lambda x , y: min(x, y)).collect()
 
 # COMMAND ----------
 
-rdd2.reduceByKey(lambda x , y : x if x > y else y).collect()
+rdd2.reduceByKey(lambda x , y: max(x, y)).collect()

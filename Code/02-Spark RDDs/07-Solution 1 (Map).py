@@ -13,10 +13,7 @@ rdd.collect()
 def quiz(x):
   # x -> 'great'
   l = x.split(' ') # l -> ['great']
-  l2 = []
-  for s in l:
-    l2.append(len(s))
-  return l2
+  return [len(s) for s in l]
   
 rdd2 = rdd.map(quiz)
 rdd2.collect()
